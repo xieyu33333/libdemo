@@ -1,0 +1,416 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/css3";
+input,button,select,textarea{outline:none;*zoom:1;behavior: url(PIE.htc);}
+html body div.clear,
+html body span.clear{
+    background: none;
+    border: 0;
+    clear: both;
+    display: block;
+    float: none;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+input ,
+button{
+padding:0
+}
+input , textarea , button{
+	@include box-shadow(inset white 0 0 0 1px); 
+	border:1px solid #c8c8c8;
+}
+body{
+	scrollbar-face-color: #c8c8c8; 
+	scrollbar-highlight-color: #f5f5f5; 
+	scrollbar-shadow-color: #f5f5f5; 
+	scrollbar-3dlight-color: #f5f5f5; 
+	scrollbar-arrow-color: #ffffff;
+ 	scrollbar-track-color: #f5f5f5;
+ 	scrollbar-darkshadow-color: #f5f5f5; 
+	scrollbar-base-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(200,200,200,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+background: rgba(200,200,200,0.4); 
+}
+
+ input:focus ,
+ textarea:focus {
+ 	background-color:white;
+ }
+ 
+input.grayInput{
+	@include border-radius(4px);
+	background-color:#f5f5f5;
+	height:20px;
+	line-height:20px;
+	padding:2px;
+}
+ input.grayInput:focus {
+ 	background-color:white;
+ 	outline:none;
+ 	-moz-outline:none;
+ }
+
+  input[type="password"]{
+	height:20px;
+	line-height:20px;
+}
+
+.grayTextarea{
+	@include border-radius(4px); 
+	resize:none ;
+	height:200px;
+	background-color:#f5f5f5;
+}
+
+.graySearchButton{
+	background:url(../image/icongroup.png);
+	background-position:0 0;
+	height:24px;
+	width:20px;
+	cursor: pointer;
+	z-index:200;
+	border:1px solid #c8c8c8;
+	border-left:none;
+	@include border-right-radius(4px);
+	@include box-shadow(inset white -1px 0 0 1px); 
+	background-color:#f5f5f5;
+	display: inline-block;
+	*display: inline;
+	margin-bottom: 0;
+	vertical-align: middle;
+	*zoom: 1;
+	padding:2px;
+ 	*margin-left:-5px;
+    *border-radius: 3px;
+}
+
+.graySearchInput{
+	@include border-left-radius(4px);
+	border-right:none;
+	height:22px;
+	width:150px;
+	background-color:#f5f5f5;
+	margin-right:-5px;
+	display: inline-block;
+	*display: inline;
+	margin-bottom: 0;
+	vertical-align: middle;
+	*zoom: 1;
+	padding:0;
+    *border-radius: 3px;
+}
+
+.gray-pill{
+	border:1px solid  #c8c8c8;
+	@include border-radius(4px);
+	@include box-shadow(inset white 0 0 0 1px); 
+	@include background-image(linear-gradient(white, #e9e9e9)); 
+  	color: #717171;
+  	font: bold 14px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  	padding: 2px;
+  	text-align: center;
+  	vertical-align: middle;
+  	text-transform: uppercase;
+  	cursor: pointer;
+  	height:20px;
+  	line-height: 20px;
+  	-pie-background: linear-gradient(white,  #e9e9e9);
+  	behavior: url(PIE.htc);
+}
+
+
+.gray-pill:hover {
+   @include background-image(linear-gradient(#e9e9e9 , white)); 
+   -pie-background: linear-gradient(#e9e9e9 , white);
+}
+
+.gray-pill:active {
+   background: white ;
+   @include box-shadow(inset #efefef 0 0 0 2px); 
+}
+
+.gray-dropdown {
+   border:1px solid  #c8c8c8;
+   @include border-radius(4px);
+   @include background-image(linear-gradient(white, #e9e9e9)); 
+   -pie-background: linear-gradient(white , #e9e9e9);
+   height:22px;
+   width:50px;
+   cursor: pointer;
+   behavior: url(PIE.htc);
+}
+
+.gray-dropdown:hover{
+	background: white;
+	-pie-background: linear-gradient(#e9e9e9 , white);
+};
+
+.set{
+	height:18px;
+	width: 18px;
+	line-height: 18px;
+	background:url(../image/icongroup.png) no-repeat;
+	background-position:-16px -1px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 6px;
+}
+
+.setdown{
+	height:18px;
+	width: 18px;
+	line-height: 18px;
+	background:url(../image/icongroup.png) no-repeat;
+	background-position:-34px -1px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 1px;
+
+}
+
+.numberborder{
+	border:1px solid  #c8c8c8;
+    @include border-radius(4px);
+    width: 110px;
+    padding-bottom: 3px;
+    display: inline;
+    behavior: url(PIE.htc);
+}
+
+.number{
+	@include border-radius(4px);
+	border: none;
+	display: inline-block;
+	*display: inline;
+	margin-bottom: 0;
+	vertical-align: middle;
+	*zoom: 1;
+	padding-left:3px;
+	width:80px;
+	height:20px;
+}
+
+.numberadjust{
+	width:17px;
+	height:30px;
+	display: inline-block;
+	*display: inline;
+	margin-bottom: 0;
+	vertical-align: middle;
+	*zoom: 1;
+	padding:0;
+	cursor: pointer;
+}
+
+.numberup{
+	height:15px;
+	background:url(../image/icongroup.png) no-repeat;
+	background-position:-50px 1px;
+}
+
+.numberdown{
+	height:15px;
+	background:url(../image/icongroup.png) no-repeat;
+	background-position:-34px -6px;
+}
+
+.radio-up{
+	background:url(../image/icongroup.png) no-repeat;
+	background-position: -4px -156px;
+	height:14px;
+	width: 15px;
+    display: inline;
+}
+
+.radio-up:active{
+	background-position: -56px -156px;
+}
+
+.radio-selected{
+	background-position: -30px -156px;
+}
+
+.checkbox-up{
+	background:url(../image/icongroup.png) no-repeat;
+	background-position: -4px -130px;
+	height:14px;
+	width: 15px;
+    display: inline;
+}
+.checkbox-up:active{
+	background-position: -56px -130px;
+};
+
+.checkbox-selected{
+	background-position: -30px -130px;
+};
+
+.checkbox-up input,
+.radio-up input{
+	display: none;
+}
+//selector plugin
+
+.j-container {
+	position:relative;
+	min-width:136px;
+	width:15%;
+	height:22px;
+	background:#FFF;
+	@include border-radius(4px);
+	border:1px solid #c8c8c8;
+  	behavior: url(PIE.htc);
+}
+
+.j-select-arrrowDown {
+	width:19px;
+	height:24px;
+	right:0px;
+	top:0px;
+	background:url(../image/icongroup.png) no-repeat;
+	background-position:-34px 1px;
+}
+.j-select-arrrowDown:hover {
+	
+}
+
+.j-container div {
+	color:#333;
+	padding-left:3px;
+	line-height:24px;
+	width:15%;
+}
+
+.j-select-list {
+	z-index: 1000;
+	border:#dbdfe6 solid 1px;
+	text-align:left;
+	background:#FFF;
+}
+
+.j-select-list li {
+	color:#333;
+	padding-left:3px;
+	line-height:24px;
+	height:24px;
+}
+
+.j-select-list li.active {
+	background:#dbdfe6;
+	color:#FFF;
+}
+
+.validity-tooltip {
+    z-index:1003;
+    cursor:pointer;
+    padding:5px;
+    width:16em;
+    border: 1px solid #c8c8c8;
+    color:#111;
+    position: absolute;
+    @include background-image(linear-gradient(white, #e9e9e9)); 
+    @include border-radius(4px);
+    @include box-shadow(#c8c8c8 2px 2px 2px); 
+    //-pie-background: linear-gradient(white, #e9e9e9);
+}
+
+.validity-tooltip .validity-tooltip-outer, .validity-tooltip .validity-tooltip-inner {
+    position: absolute; 
+    width:0; 
+    height:0; 
+    border-right-width: 0;
+    background:none;
+    bottom:auto;
+}
+
+.validity-tooltip .validity-tooltip-outer {	
+    top:-10px;
+    left:11px;
+    height: 20px;
+    width:20px;
+}
+
+.validity-tooltip .validity-tooltip-inner {
+    top:-5px;
+    left:3px;
+    height: 20px;
+    width:20px;
+    background:url(../image/sanjiao.png) no-repeat;
+}
+
+.LV_validation_message{
+    font-weight:bold;
+    margin:0 0 0 5px;
+}
+
+.LV_valid {
+    color:#00CC00;
+}
+	
+.LV_invalid {
+    color:#CC0000;
+}
+    
+.LV_valid_field,
+input.LV_valid_field:hover, 
+input.LV_valid_field:active,
+textarea.LV_valid_field:hover, 
+textarea.LV_valid_field:active {
+    border: 1px solid #00CC00;
+}
+    
+.LV_invalid_field, 
+input.LV_invalid_field:hover, 
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover, 
+textarea.LV_invalid_field:active {
+    border: 1px solid #CC0000;
+}
+
+
+.nav-tabs > li > a {
+	color:#989898;
+}
+
+.nav-tabs > li > a:hover{
+	color:#555555;
+	background: #eaeaea;
+}
+
+.progress{
+	width:400px;
+}
+
+.progress .bar{
+	background: #c8c8c8;
+}
+

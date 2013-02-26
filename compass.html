@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset=utf-8>
+      <link type="text/css" rel="stylesheet" href="bootstrap.css"/>
+  		<link type="text/css" rel="stylesheet" href="stylesheets/screen.css"/>
+  		<link type="text/css" rel="stylesheet" href="demo_self.css"/>
+  		<link type="text/css" rel="stylesheet" href="prettify.css"/>
+  		<link type="text/css" rel="stylesheet" href="960_24_col.css"/>
+    </head>
+    <body onload="prettyPrint()">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <a class="brand" href="index.html">Title</a>
+            <ul class="nav">
+              <li class="active"><a href="#">scss&compass</a></li>
+              <li><a href="grid.html">栅格系统</a></li>
+              <li><a href="#">响应式框架</a></li>
+              <li><a href="compatibility.html">兼容问题汇总</a></li>
+              <li><a href="form_group.html">基础组件</a></li>
+              <li><a href="icon.html">图标素材</a></li>
+              <li><a href="#">图表</a></li>
+              <li><a href="#">动画</a></li>
+            </ul>
+          </div>
+        </div>
+		<div class="container_24">
+            <h3 class="infoTitle">scss&compass</h3>
+            <div class="leftside grid_8">
+                <h4>目 录</h4>
+                <div class="row indexcontent">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#">介 绍</a></li>
+                        <li><a href="#">安 装</a></li>
+                        <li><a href="#">scss说明文档</a></li>
+						 <li><a href="#">compass说明文档</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightside grid_15">
+        		<h3 class="page-header">scss&compass介绍</h3>
+    			<p></p>
+    			<h3 class="page-header">安装说明</h3>
+    			<p>scss依赖于ruby环境，因此首先必须先安装ruby环境，windows下可以使用ruby installer快速安装，</p>
+    			<a href = "http://rubyinstaller.org/downloads">ruby installer 下载</a>
+    			<p>linux和mac环境可以采用rvm安装ruby，也可以直接编译安装</p>
+    			<a href = "http://ruby-china.org/wiki/install-rails-on-ubuntu-12-04-server">ubuntu下rvm环境部署</a></br>
+    			<a href = "http://www.ruby-lang.org/en/downloads/">ruby源码包下载</a>
+    			<p>ruby环境搭建好之后，我们就可以安装scss和compass了，如果你已经安装了rails，那么就不用单独安装scss了。
+                </p>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    $ gem install sass 
+                    $ gem install compass         
+                </pre>
+    			<h3 class="page-header">scss说明文档</h3>
+    			<h4>变量设置</h4>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    $blue: #3bbfce;
+                    $margin: 16px;
+                    使用$关键字设置变量，并支持对变量进行运算操作
+                </pre>
+                <h4>继 承</h4>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    使用@extend关键字，继承.error类的属性
+                     @extend .error;
+                </pre>
+                <h4>嵌 套</h4>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    #navbar {
+                     &nbsp&nbsp width: 80%;
+                     &nbsp&nbsp height: 23px;
+
+                      &nbsp&nbspul { list-style-type: none; }
+                      &nbsp&nbsp&nbsp&nbspli {
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbspfloat: left;
+                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp a { font-weight: bold; }
+                      &nbsp&nbsp&nbsp&nbsp}
+                    }
+                </pre>
+                <h4>插 值</h4>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    可以通过#{}将变量插入css属性名内
+                    $vert: top;
+                    $horz: left;
+                    $radius: 10px;
+
+                    .rounded-#{$vert}-#{$horz} {
+                      &nbsp&nbsp border-#{$vert}-#{$horz}-radius: $radius;
+                      &nbsp&nbsp -moz-border-radius-#{$vert}#{$horz}: $radius;
+                      &nbsp&nbsp -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+                    }
+                </pre>
+                <h4>Mixins</h4>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    Mixin可以让我们自定义类似于compass中的方法
+                    
+                    @mixin rounded-top-left {
+                    &nbsp&nbsp  $vert: top;
+                    &nbsp&nbsp  $horz: left;
+                    &nbsp&nbsp  $radius: 10px;
+
+                    &nbsp&nbsp  border-#{$vert}-#{$horz}-radius: $radius;
+                    &nbsp&nbsp  -moz-border-radius-#{$vert}#{$horz}: $radius;
+                    &nbsp&nbsp  -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+                    }
+
+                    #navbar li { @include rounded-top-left; }
+                    #footer { @include rounded-top-left; }
+                </pre>
+                <h4>参 数</h4>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    @mixin rounded($vert, $horz, $radius: 10px) {
+                    &nbsp&nbsp  border-#{$vert}-#{$horz}-radius: $radius;
+                    &nbsp&nbsp  -moz-border-radius-#{$vert}#{$horz}: $radius;
+                    &nbsp&nbsp  -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+                    }
+
+                    #navbar li { @include rounded(top, left); }
+                    #footer { @include rounded(top, left, 5px); }
+                    #sidebar { @include rounded(top, left, 8px); }
+                </pre>
+                <h4>引 入</h4>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                   使用@import关键字
+                   被引入文件应以下划线开头：_rounded.scss
+                   @import "rounded";
+                </pre>
+                
+    			<h3 class="page-header">compass说明文档</h3>
+    			<h4>CSS3</h4>
+                <p>CSS3是compass中可能我们用到最多的组件，可以避免书写大量的css3代码</p>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    在scss文档开头引用：
+                    @import "compass/css3";
+                </pre>
+                <h4>box-shadow</h4>
+                 <pre class="prettyprint" style="white-space:pre-line;">
+                     @include box-shadow(rgba(blue, 0.4) 0 0 25px, rgba(green, 0.2) 0 0 3px 1px inset);
+                 </pre>
+                 <h4>border-radius</h4>
+                 <pre class="prettyprint" style="white-space:pre-line;">
+                     @include border-radius(25px);
+                     @include border-top-right-radius(25px); 
+                 </pre>
+                 <h4>inline-block</h4>
+                 <pre class="prettyprint" style="white-space:pre-line;">
+                    解决了IE下inline-block显示不正常的问题：
+                    
+                    @include inline-block
+                 </pre>
+                 <h4>opacity</h4>
+                 <pre class="prettyprint" style="white-space:pre-line;">
+                 @include opacity(0.5); 
+                 </pre>
+                 <h4>text-shadow</h4>
+                 <pre class="prettyprint" style="white-space:pre-line;">
+                 @include text-shadow(rgba(blue, 0.2) 1px 1px 0, rgba(blue, 0.2) 2px 2px 0, rgba(blue, 0.2) 3px 3px 0);
+                 </pre>
+                 <h4>background-image</h4>
+                 <pre class="prettyprint" style="white-space:pre-line;">
+                     最常用的二梯度二色线性渐变:
+                     @include background-image(linear-gradient(white, #e9e9e9)); 
+                 </pre>
+            </div>
+		</div>
+		<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+        <!--[if IE]>
+        <script type="text/javascript" src="form_type.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="prettify.js"></script>
+		<script type="text/javascript" src="select.js"></script>
+		<script type="text/javascript" src="bootstrap.js"></script>
+        <script type="text/javascript" src="Livevalidation.js"></script>
+         <script type="text/javascript" src="number.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			 $("#my_select").JSelect();
+             $(".numberup").numchange();
+             $(".numberdown").numchange();
+
+              $('#myTab a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+              })
+
+              $('#myTab a:first').tab('show');
+           
+		});	
+            
+		</script>
+		<script src="jquery.validity.js"></script>
+        <script>
+            $("form").validity(function() {
+                $("#requiredInput").require();
+				$("#testmatch").require().match(/^\w{7,256}$/, "密码必须大于6位");
+            });	
+            var email = new LiveValidation('email');
+            email.add( Validate.Email , { failureMessage: "请输入正确的邮箱格式" } );
+            email.add( Validate.Presence, { failureMessage: "邮箱不能为空" } );
+            var password = new LiveValidation('password');
+            password.add( Validate.Length, { minimum: 6 } ,{ failureMessage: "密码必须大于6位" });
+            password.add( Validate.Presence, { failureMessage: "密码不能为空" } );
+        </script>
+       
+    </body>
+</html>

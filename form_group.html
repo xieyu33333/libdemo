@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <link type="text/css" rel="stylesheet" href="bootstrap.css"/>
+		<link type="text/css" rel="stylesheet" href="stylesheets/screen.css"/>
+		<link type="text/css" rel="stylesheet" href="demo_self.css"/>
+		<link type="text/css" rel="stylesheet" href="prettify.css"/>
+		<link type="text/css" rel="stylesheet" href="960_24_col.css"/>
+        <link type="text/css" rel="stylesheet" href="jquery-ui-1.10.1.slider.css">
+    </head>
+    <body onload="prettyPrint()">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <a class="brand" href="index.html">Title</a>
+            <ul class="nav">
+              <li><a href="compass.html">scss&compass</a></li>
+              <li><a href="grid.html">栅格系统</a></li>
+              <li><a href="flout.html">响应式框架</a></li>
+              <li><a href="compatibility.html">兼容问题汇总</a></li>
+              <li class="active"><a href="#">基础组件</a></li>
+              <li><a href="icon.html">图标素材</a></li>
+              <li><a href="#">图表</a></li>
+              <li><a href="#">动画</a></li>
+            </ul>
+          </div>
+        </div>
+		<div class="container_24">
+            <h3 class="infoTitle">基础组件(gray)</h3>
+            <div class="leftside grid_8">
+                <h4>目 录</h4>
+                <div class="row indexcontent">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#">灰色版</a></li>
+                        <li><a href="#">蓝色版</a></li>
+                        <li><a href="#">绿色版</a></li>
+                        <li><a href="#">红色版</a></li>
+                    </ul>
+                </div>
+                <h4>简 介</h4>
+                <p>
+                       针对国内对浏览器兼容性的要求和设计开发需要，通过整合现有的开源插件制作一套基本的表单样式集。</br>
+                <h4>主要特点:</h4></br>
+                        兼容IE7及以上版本浏览器，大部分兼容IE6。</br>
+                        风格统一，可直接应用于项目中。</br>
+                        成熟度高，基于成熟的开源项目。</br>
+                <h4>基础类库:</h4></br>
+                        Bootstrap:当今最流行的前端库，主要应用其基础JS组件</br>
+                        PIE:主要用于IE的CSS3兼容，没有ie-css3.htc的变形问题，并支持JS引用</br>
+                        select表单样式重置库</br>
+                        前端三种形式的表单验证库</br>
+                </p>
+            </div>
+            <div class="rightside grid_15">
+        		<h4>文本框</h4>
+        		<p class="secondTip">单行文本框</p>
+        		<input class="grayInput grid_4"/>
+        		<div class="clear"></div>
+        		<p class="secondTip">多行文本框</p>
+        		<textarea class="grayTextarea grid_9"></textarea>
+        		<div class="clear"></div>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                  &ltinput class="grayInput grid_4"/&gt
+                  &lttextarea class="grayTextarea grid_9"&gt&lt/textarea&gt
+                </pre>
+        		<h4>搜索框</h4>
+        		<form class="form-search">
+        			<input class="graySearchInput" />
+        			<input type="submit" class="graySearchButton" value=" " />
+        		</form>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    &ltform class="form-search">
+                       &nbsp&nbsp &ltinput class="graySearchInput" />
+                       &nbsp&nbsp &ltinput type="submit" class="graySearchButton" value=" " />
+                    &lt/form>
+                </pre>
+        		<h4>下拉表单</h4>
+        		<select class="grid_4" id="my_select">	
+        			<option>1</option>
+        			<option>2</option>
+        			<option>3</option>
+        		</select>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    &ltselect class="grid_4" id="my_select">  
+                       &nbsp&nbsp &ltoption>1&lt/option>
+                        ...
+                    &lt/select>
+                    引用了一个JS控件，用div+js模拟select表单效果，使用时只需给select定义id
+                    并在JS中做如下调用即可。
+                    &ltscript type="text/javascript" src="select.js">&lt/script>
+                    $(document).ready(function() {
+                       &nbsp&nbsp $("#my_select").JSelect();
+                    }); 
+                </pre>
+        		<div class="clear"></div>
+        		<h4>下拉按钮</h4>
+                <div class="dropdown">
+            		<div class="gray-dropdown" data-toggle="dropdown">
+                        <i class="set"></i>
+                        <i class="setdown"></i>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a>1</a></li>
+                        <li><a>2</a></li>
+                        <li><a>3</a></li>
+                        <li><a>4</a></li>
+                    </ul>
+                </div>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    &ltdiv class="dropdown">
+                    &nbsp&nbsp&ltdiv class="gray-dropdown" data-toggle="dropdown">
+                      &nbsp&nbsp&nbsp&nbsp  &lti class="set">&lt/i>
+                      &nbsp&nbsp&nbsp&nbsp  &lti class="setdown">&lt/i>
+                    &nbsp&nbsp &lt/div>
+                      &nbsp&nbsp &ltul class="dropdown-menu">
+                      &nbsp&nbsp&nbsp&nbsp  &ltli>&lta>1&lt/a>&lt/li>
+                         .....
+                      &nbsp&nbsp&nbsp&nbsp  &ltli>&lta>4&lt/a>&lt/li>
+                      &nbsp&nbsp &lt/ul>
+                    &lt/div>
+                </pre>
+
+        		<div class="clear"></div>
+                <h4>命令按钮</h4>
+                <a class="gray-pill grid_2">确 认</a>
+                <div class="clear"></div>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    &lta class="gray-pill grid_2">确 认&lt/a>
+                </pre>
+        		<h4>复选框</h4>
+        		<form>
+                    <label class="checkbox-up">
+                        &nbsp&nbsp&nbsp&nbsp
+        			 <input type="checkbox" name="bike" />
+                    </label>
+        			I have a bike
+        			<br />
+        			<label class="checkbox-up">
+                        &nbsp&nbsp&nbsp&nbsp
+                     <input type="checkbox"  name="car" />
+                    </label>
+        			I have a car
+        		</form>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    &ltform>
+                    &ltlabel class="checkbox-up">
+                        & nbsp & nbsp & nbsp & nbsp
+                     &ltinput type="checkbox" name="bike" />
+                    &lt/label>
+                    &lt/form>
+                </pre>
+        		<h4>单选框</h4>
+        		<form>
+                    <label class="radio-up" for="proradio">
+                        &nbsp&nbsp&nbsp&nbsp
+                        <input id="proradio" type="radio"/>
+                    </label>
+        		</form>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    &ltform>
+                    &ltlabel class="radio-up">
+                        & nbsp & nbsp & nbsp & nbsp
+                     &ltinput type="radio"  />
+                    &lt/label>
+                    &lt/form>
+                </pre>
+        		<h4>数字微调</h4>
+                <label class="numberborder">
+                    <input id="s1" class="number" value=1></input>
+                    <div class="numberadjust" id=1>
+                        <div class="numberup"></div>
+                        <div class="numberdown"></div>
+                    </div>
+                </label>
+                 <pre class="prettyprint" style="white-space:pre-line;">
+                    &ltlabel class="numberborder">
+                      &nbsp&nbsp  &ltinput class="number" value=1>&lt/input>
+                      &nbsp&nbsp  &ltdiv class="numberadjust">
+                           &nbsp&nbsp&nbsp&nbsp &ltdiv class="numberup">&lt/div>
+                           &nbsp&nbsp&nbsp&nbsp &ltdiv class="numberdown">&lt/div>
+                      &nbsp&nbsp  &lt/div>
+                    &lt/label>
+
+                    JS调用：
+                      $(".numberup").numchange();
+                      $(".numberdown").numchange();
+                 </pre>
+        		<h4>气泡提示</h4>
+        		<form>
+        			<div>
+        				<div style="float:left">邮 箱:</div>
+        				<input class="grayInput grid_4"/>
+        			</div>
+        			<div class="clear"></div>
+        			<div style="margin-top:15px">
+        				<div style="float:left">密 码:</div>
+        				<input id="testmatch" class="grayInput grid_4" type="password"/>
+        			</div>
+        			<div class="clear"></div>
+        			<div style="margin-top:5px">
+        				<input style="height:30px" class="gray-pill grid_2" type="submit" value="提 交" />
+        			</div>
+        	    </form>
+        		<div class="clear"></div>
+        		<h4>红绿文字提示</h4>
+        		<div>
+        			<div style="float:left">邮 箱:</div>
+        			<input id="email" class="grayInput grid_4"/>
+        		</div>
+        		<div class="clear"></div>
+        		<div style="margin-top:15px">
+        			<div style="float:left">密 码:</div>
+        			<input id="password" type="password" class="grayInput grid_4"/>
+        		</div>
+        		<div class="clear"></div>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    使用了 LiveValidation 这个JS控件，主要用于提供表单输入时的用户体验。
+
+                    var email = new LiveValidation('email');
+                    email.add( Validate.Email , { failureMessage: "请输入正确的邮箱格式" } );
+                    email.add( Validate.Presence, { failureMessage: "邮箱不能为空" } );
+                    var password = new LiveValidation('password');
+                    password.add( Validate.Length, { minimum: 6 } ,{ failureMessage: "密码必须大于6位" });
+                    password.add( Validate.Presence, { failureMessage: "密码不能为空" } );
+                </pre>
+        		<h4>进度条</h4>
+        		<div class="progress">
+        			<div class="bar" style="width: 60%;"></div>
+        		</div>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    &ltdiv class="progress">
+                       &nbsp&nbsp &ltdiv class="bar" style="width: 60%;">&lt/div>
+                    &lt/div>
+                </pre>
+        		<h4>滑块</h4>
+                    <div id="slider"></div>
+                    <pre class="prettyprint" style="white-space:pre-line;">
+                        &ltdiv id="slider">&lt/div>
+                        JS调用：
+                        $( "#slider" ).slider();
+                    </pre>
+        		<h4>选项卡</h4>
+                <div>
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#profile">Profile</a></li>
+                        <li><a href="#messages" >Messages</a></li>
+                        <li><a href="#settings">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="tabbable tabs-below" >
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active"><a href="#home">首页</a></li>
+                        <li><a href="#profile">Profile</a></li>
+                        <li><a href="#messages" >Messages</a></li>
+                        <li><a href="#settings">Settings</a></li>
+                    </ul>
+                </div>
+                <div class="tabbable tabs-left" style="width:300px; float:left;">
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active"><a href="#home">首页</a></li>
+                        <li><a href="#profile">Profile</a></li>
+                        <li><a href="#messages" >Messages</a></li>
+                        <li><a href="#settings">Settings</a></li>
+                    </ul>
+                </div>
+
+                <div class="tabbable tabs-right">
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active"><a href="#home">首页</a></li>
+                        <li><a href="#profile">Profile</a></li>
+                        <li><a href="#messages" >Messages</a></li>
+                        <li><a href="#settings">Settings</a></li>
+                    </ul>
+                </div>
+
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    &ltdiv>
+                      &nbsp&nbsp  &ltul class="nav nav-tabs" id="myTab">
+                          &nbsp&nbsp&nbsp&nbsp  &ltli>&lta href="#home">首页&lt/a>&lt/li>
+                          &nbsp&nbsp&nbsp&nbsp  &ltli>&lta href="#profile">Profile&lt/a>&lt/li>
+                          &nbsp&nbsp&nbsp&nbsp  &ltli>&lta href="#messages" >Messages&lt/a>&lt/li>
+                          &nbsp&nbsp&nbsp&nbsp  &ltli>&lta href="#settings">Settings&lt/a>&lt/li>
+                      &nbsp&nbsp  &lt/ul>
+                    &lt/div>
+                    
+                    在div中使用：
+                    class="tabbable tabs-left"
+                    class="tabbable tabs-right"
+                    class="tabbable tabs-below"
+                    来控制选项卡的方向
+
+                    JS调用：
+                     $('#myTab a').click(function (e) {
+                        e.preventDefault();
+                        $(this).tab('show');
+                      })
+
+                      $('#myTab a:first').tab('show');
+                </pre>
+        		<h4>列表</h4>
+        		<table class="table">
+        			<tr>
+        				<th><input type="checkbox" /></th>
+        				<th>序号</th>
+        				<th>工作单位</th>
+        				<th>说明</th>
+        			</tr>
+        			<tr>
+        				<td><input type="checkbox" /></td>
+        				<td>1</td>
+        				<td>卓衡创盟应用科技有限公司</td>
+        				<td>卓衡创盟应用科技有限公司</td>
+        			</tr>
+        			<tr>
+        				<td><input type="checkbox" /></td>
+        				<td>2</td>
+        				<td>卓衡创盟应用科技有限公司</td>
+        				<td>卓衡创盟应用科技有限公司</td>
+        			</tr>
+        			<tr>
+        				<td><input type="checkbox" /></td>
+        				<td>3</td>
+        				<td>卓衡创盟应用科技有限公司</td>
+        				<td>卓衡创盟应用科技有限公司</td>
+        			</tr>
+        		</table>
+        		<h4>翻页</h4>
+        		<div class="pagination">
+        				<ul>
+        				<li class="disabled"><a href="#">&laquo;</a></li>
+        				<li class="active"><a href="#">1</a></li>
+        				<li><a href="">2</a></li>
+        				<li><a href="">3</a></li>
+        				<li><a href="">4</a></li>
+        				<li><a href="">5</a></li>
+        				<li><a href="">»</a></li>
+        				</ul>
+        		</div>
+
+        		<h4>树型结构</h4>
+            </div>
+		</div>
+		<script type="text/javascript" src="jquery-1.9.1.js"></script>
+        <!--[if IE]>
+        <script type="text/javascript" src="form_type.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="prettify.js"></script>
+		<script type="text/javascript" src="select.js"></script>
+		<script type="text/javascript" src="bootstrap.js"></script>
+        <script type="text/javascript" src="Livevalidation.js"></script>
+        <script type="text/javascript" src="number.js"></script>
+        <script type="text/javascript" src="jquery-ui-1.10.1.slider.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			 $("#my_select").JSelect();
+             $(".numberup").numchange();
+             $(".numberdown").numchange();
+             $( "#slider" ).slider();
+
+              $('#myTab a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+              })
+
+              $('#myTab a:first').tab('show');
+
+              $('.radio-up,.checkbox-up').click(function(){
+                setupLabel();
+                });
+                
+              setupLabel();
+               function setupLabel(){
+                  if($('.radio-up input').length) {
+                    $('.radio-up').each(function(){
+                        $(this).removeClass('radio-selected');
+                    });
+                    $('.radio-up input:checked').each(function(){
+                        $(this).parent('label').addClass('radio-selected');
+                    });
+                  };
+                   if($('.checkbox-up input').length) {
+                    $('.checkbox-up').each(function(){
+                        $(this).removeClass('checkbox-selected');
+                    });
+                    $('.checkbox-up input:checked').each(function(){
+                        $(this).parent('label').addClass('checkbox-selected');
+                    });
+                  };
+           }
+		});	
+            
+		</script>
+		<script src="jquery.validity.js"></script>
+        <script>
+            $("form").validity(function() {
+                $("#requiredInput").require();
+				$("#testmatch").require().match(/^\w{7,256}$/, "密码必须大于6位");
+            });	
+            var email = new LiveValidation('email');
+            email.add( Validate.Email , { failureMessage: "请输入正确的邮箱格式" } );
+            email.add( Validate.Presence, { failureMessage: "邮箱不能为空" } );
+            var password = new LiveValidation('password');
+            password.add( Validate.Length, { minimum: 6 } ,{ failureMessage: "密码必须大于6位" });
+            password.add( Validate.Presence, { failureMessage: "密码不能为空" } );
+        </script>
+       
+    </body>
+</html>

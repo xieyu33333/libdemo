@@ -1,0 +1,34 @@
+body{
+	font-family:"Microsoft YaHei",微软雅黑,"Microsoft JhengHei",华文细黑,STHeiti,MingLiu;
+	font-size:14px;
+}
+
+.infoTitle{
+	border-bottom:2px solid black; 
+	padding-bottom:15px;
+}
+
+.secondTip{
+	margin-left:20px;
+}
+
+ol, ul, li {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	vertical-align: baseline;
+}
+
+.leftside{
+	float:left;
+}
+.rightside{
+	float:left;
+	border-left:1px solid #c8c8c8;
+	padding-left:30px;
+}
+
+.indexcontent{
+	margin-left:20px;
+}

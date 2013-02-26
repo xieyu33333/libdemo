@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset=utf-8>
+      <link rel="shortcut icon" href="image/favicon.ico">
+      <link type="text/css" rel="stylesheet" href="bootstrap.css"/>
+  	  <link type="text/css" rel="stylesheet" href="stylesheets/screen.css"/>
+  	  <link type="text/css" rel="stylesheet" href="demo_self.css"/>
+  	  <link type="text/css" rel="stylesheet" href="prettify.css"/>
+  	  <link type="text/css" rel="stylesheet" href="960_24_col.css"/>
+    </head>
+    <body onload="prettyPrint()">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <a class="brand" href="index.html">Title</a>
+            <ul class="nav">
+              <li><a href="compass.html">scss&compass</a></li>
+              <li><a href="grid.html">栅格系统</a></li>
+              <li><a href="#">响应式框架</a></li>
+              <li class="active"><a href="#">兼容问题汇总</a></li>
+              <li><a href="form_group.html">基础组件</a></li>
+              <li><a href="icon.html">图标素材</a></li>
+              <li><a href="#">图表</a></li>
+              <li><a href="#">动画</a></li>
+            </ul>
+          </div>
+        </div>
+		<div class="container_24">
+            <h3 class="infoTitle">兼容性问题汇总</h3>
+            <div class="leftside grid_8">
+                <h4>目 录</h4>
+                <div class="row indexcontent">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#">IE6,7下的z-index问题</a></li>
+                        <li><a href="#">inline-block纵向显示问题</a></li>
+                        <li><a href="#">line-height</a></li>
+						<li><a href="#">去除虚线框</a></li>
+                        <li><a href="#">IE6的position:fixed问题</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rightside grid_15">
+        		<h4 class="page-header">IE6,7下的z-index问题</h4>
+				<p>IE6，7下z-index的显示取决于同级祖先元素的z-index值，为了兼容IE，应当给其祖先元素赋z-index值,"后台硬占据最高点"</p></br>
+                <p>例子：</p>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    &ltli>
+                        &nbsp&nbsp &ltp>
+                           &nbsp&nbsp&nbsp&nbsp &ltspan> 第一个元素 &lt/span>
+                            &nbsp&nbsp&nbsp&nbsp&lt/p>
+                    &lt/li>
+                    &ltli>
+                       &nbsp&nbsp &ltspan> 第一个元素 &lt/span>
+                    &lt/li>
+                    此时应当给两个li标签添加z-index和position属性来决定span标签谁上谁下
+                </pre>
+				<h4 class="page-header">inline-block在IE下纵向显示问题</h4>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                    .test{
+                       &nbsp&nbsp display:inline-block;
+                       &nbsp&nbsp *zoom = 1;
+                       &nbsp&nbsp *display:inline;
+                    }
+                    compass可直接用：
+                    @include inline-block
+                </pre>
+                <h4 class="page-header">line-height</h4>
+                <p>第一个问题是IE浏览器和其他浏览器出现不同显示的问题，这个问题可以用IE hack来解决</p></br>
+                <p>当在一个容器里文字和img、input、textarea、select、object等元素相连的时候，对这个容器设置的line-height数值会失效</p>
+                <p>解决方法：</br>
+                    对和文字相连接的img、input、textarea、select、object等元素加以属性</br>
+                </p>
+                <pre class="prettyprint" style="white-space:pre-line;">
+                margin: (所属line-height-自身高度)/2px 0; 
+                vertical-align:middle;
+                </pre>
+                <h4 class="page-header">去除虚线框</h4>
+                <p>IE 添加 HTML 属性 hidefocus="true"</p></br>
+                <p>IE8可以设置css： outline:none;</p>
+            </div>
+		</div>
+		<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+        <!--[if IE]>
+        <script type="text/javascript" src="form_type.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="prettify.js"></script>
+		<script type="text/javascript" src="select.js"></script>
+		<script type="text/javascript" src="bootstrap.js"></script>
+        <script type="text/javascript" src="Livevalidation.js"></script>
+        <script type="text/javascript" src="number.js"></script>
+    </body>
+</html>

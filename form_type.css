@@ -1,0 +1,177 @@
+html body div.clear,
+html body span.clear{
+    background: none;
+    border: 0;
+    clear: both;
+    display: block;
+    float: none;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+input ,
+button{
+padding:0
+}
+body{
+scrollbar-face-color: #c8c8c8; 
+scrollbar-highlight-color: #f5f5f5; 
+scrollbar-shadow-color: #f5f5f5; 
+scrollbar-3dlight-color: #f5f5f5; 
+scrollbar-arrow-color: #ffffff;
+ scrollbar-track-color: #f5f5f5;
+ scrollbar-darkshadow-color: #f5f5f5; 
+ scrollbar-base-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(200,200,200,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+background: rgba(200,200,200,0.4); 
+}
+input:focus {background-color:white;outline:none;-moz-outline:none;}
+textarea:focus {background-color:white;outline:none;-moz-outline:none;}
+.grayInput{
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border:1px solid #c8c8c8;
+	background-color:#f5f5f5;
+	height:20px;
+	line-height:20px;
+	-moz-box-shadow:0 0 0 1.5px white inset;               /* For Firefox3.6+ */
+	-webkit-box-shadow:0 0 0 1.5px white inset;            /* For Chrome5+, Safari5+ */
+	box-shadow:0 0 0 1.5px white inset;  
+}
+
+.grayTextarea{
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	resize:none ;
+	height:200px;
+	border:1px solid #c8c8c8;
+	background-color:#f5f5f5;
+	-moz-box-shadow:0 0 0 1.5px white inset;               /* For Firefox3.6+ */
+	-webkit-box-shadow:0 0 0 1.5px white inset;            /* For Chrome5+, Safari5+ */
+	box-shadow:0 0 0 1.5px white inset;  
+	inline-height:
+}
+
+.graySearchButton{
+	background:url(image/icongroup.png);
+	background-position:0 0;
+	height:24px;
+	width:20px;
+	cursor: pointer;
+	z-index:200;
+	border:1px solid #c8c8c8;
+	border-left:none;
+	-moz-border-radius-topright: 4px;
+	-webkit-border-top-right-radius: 4px;
+	border-top-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	background-color:#f5f5f5;
+	-moz-box-shadow:0 0 0 1.5px white inset;               /* For Firefox3.6+ */
+	-webkit-box-shadow: -1.5px 0 0 1.5px white inset;            /* For Chrome5+, Safari5+ */
+	box-shadow:-1.5px 0 0 1.5px white inset;  
+	display: inline-block;
+	*display: inline;
+	margin-bottom: 0;
+	vertical-align: middle;
+	*zoom: 1;
+}
+
+.graySearchInput{
+	-moz-border-radius-topleft: 4px;
+	-webkit-border-top-left-radius: 4px;
+	border-top-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border:1px solid #c8c8c8;
+	border-right:none;
+	height:22px;
+	background-color:#f5f5f5;
+	-moz-box-shadow:0 0 0 1.5px white inset;               /* For Firefox3.6+ */
+	-webkit-box-shadow:0 0 0 1.5px white inset;            /* For Chrome5+, Safari5+ */
+	box-shadow:0 0 0 1.5px white inset;  
+	margin-right:-5px;
+	display: inline-block;
+	*display: inline;
+	margin-bottom: 0;
+	vertical-align: middle;
+	*zoom: 1;
+}
+
+.j-container {
+	position:relative;
+	min-width:136px;
+	width:15%;
+	height:22px;
+	background:#FFF;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	border:1px solid #c8c8c8;
+}
+
+.j-select-arrrowDown {
+	width:19px;
+	height:24px;
+	right:0px;
+	top:0px;
+	background:url(image/icongroup.png) no-repeat;
+	background-position:-34px 1px;
+}
+.j-select-arrrowDown:hover {
+	
+}
+
+.j-container div {
+	color:#333;
+	padding-left:3px;
+	line-height:24px;
+	width:15%;
+}
+
+.j-select-list {
+	z-index: 1000;
+	border:#dbdfe6 solid 1px;
+	text-align:left;
+	background:#FFF;
+}
+
+.j-select-list li {
+	color:#333;
+	padding-left:3px;
+	line-height:24px;
+	height:24px;
+}
+
+.j-select-list li.active {
+	background:#dbdfe6;
+	color:#FFF;
+}
